@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/eloisasal/udemy/issues"
   },
-  "homepage": "https://github.com/eloisasal/udemy#readme"
+  "homepage": "https://github.com/eloisasal/udemy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
