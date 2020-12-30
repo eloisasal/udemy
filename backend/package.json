@@ -4,6 +4,7 @@
   "description": "Api Restful del Master en Frameworks para JS de Victor Robles Web",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.11.9",
     "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
