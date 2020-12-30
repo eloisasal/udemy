@@ -15,28 +15,34 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // cargar ficheros de rutas
-
+var article_routes = require('./routes/article');
 
 // Middlelwares (antes de ejecutar la ruta se ejecutara esto)
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json); //Convierto cualquier peticion que me llegue a un objeto JSON
+app.use(bodyParser.json()); //Convierto cualquier peticion que me llegue a un objeto JSON
 
 //CORS para peticiones de front end
 
 
-//Añadir prefijos a rutas
+//Añadir prefijos a rutas / guardar rutas
 
+app.use('/', article_routes);
 
 //Ruta o metodo de prueba
 app.get('/probando', (req, res)=>{
     console.log('he accedido');
-    return res.status(200).send(`
-    <ul>
-        <li>Node</li>
-        <li>Angular</li>
-        <li>React</li>
-    </ul>
-    `);
+    return res.status(200).send({
+        hola: 'hi',
+        test:'just a test bro',
+        wen: 'https://www.malt.es/profile/eloisasalirenom'
+    });
+    //return res.status(200).send(`
+    //<ul>
+    //    <li>Node</li>
+    //    <li>Angular</li>
+    //    <li>React</li>
+    //</ul>
+    //`);
     
 });
 
