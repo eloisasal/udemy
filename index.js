@@ -10,7 +10,7 @@
 
 var mongoose = require('mongoose'); //los require parece igual que con php!
 var app = require('./app');
-var port = 3900;
+var port = process.env.PORT;//3900;
 
 
 const Parse = require('parse/node');
