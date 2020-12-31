@@ -38,10 +38,26 @@ app.use('/', article_routes);
 //Ruta o metodo de prueba
 app.get('/probando', (req, res)=>{
     console.log('he accedido');
-    return res.status(200).send({
+    return res.status(200).send({   
         hola: 'hi',
         test:'just a test bro',
-        wen: 'https://www.malt.es/profile/eloisasalirenom'
+        web: 'https://www.malt.es/profile/eloisasalirenom'
+    });
+    //return res.status(200).send(`
+    //<ul>
+    //    <li>Node</li>
+    //    <li>Angular</li>
+    //    <li>React</li>
+    //</ul>
+    //`);
+    
+});
+app.get('/probando-save-back4app', (req, res)=>{
+    console.log('he accedido');
+    return res.status(200).send({   
+        hola: 'hi',
+        test:'just a test bro',
+        web: 'https://www.malt.es/profile/eloisasalirenom'
     });
     //return res.status(200).send(`
     //<ul>

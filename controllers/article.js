@@ -29,12 +29,13 @@ var controller = {
     save: (req, res) => {
         //recoger parametros por post
         var params = req.body;
-        console.log(params);
+        console.log('params:', params);
 
         //validar los datos con la libreria validator
         try {
             var validateTitle = !validator.isEmpty(params.title);
             var validateContent = !validator.isEmpty(params.content);
+            
         } catch (error) {
             return res.status(220).send({
                 status: 'error',
@@ -44,14 +45,20 @@ var controller = {
         if (validateTitle && validateContent) {
             //crear el objeto a guardar
             var article = new Article();
+                        
             //asignar valores
             article.title = params.title;
             article.content = params.content;
             article.image = params.image;
 
             //guardar el articulo
+            console.log('article:', article);
+            
             article.save((err, articleStored) => {
                 if (err || !articleStored) {
+                    console.log('err:', err);
+                    console.log('articleStored:', articleStored);
+                    
                     return res.status(404).send({
                         status: 'error',
                         message: 'El articulo no se ha guardado!'
