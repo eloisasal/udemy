@@ -6,15 +6,15 @@ var ArticleController = require('../controllers/article');
 
 var router = express.Router();
 
-//rutas de prueba
-router.post('/datos-curso', ArticleController.datosCurso);
-router.get('/test-de-controlador', ArticleController.test);
 
 
 
 var multiparty = require('connect-multiparty');
 var md_upload = multiparty({uploadDir: './upload/articles'});
 
+//rutas de prueba
+router.post('/datos-curso', ArticleController.datosCurso);
+router.get('/test-de-controlador', ArticleController.test);
 
 //rutas utiles
 router.post('/save', ArticleController.save);
